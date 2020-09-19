@@ -13,10 +13,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@2
-  displayName: 'Use .NET Core sdk'
+
+
+- task: DotNetCoreCLI@2
   inputs:
-    packageType: 'sdk'
-    version: '2.2.203'
-- script: dotnet build --configuration $(buildConfiguration)
+    command: 'build'
+    projects: 'eShopOnWeb.sln'
   displayName: 'dotnet build $(buildConfiguration)'
